@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un objeto Dto a un POJO,
+       y viceversa. 
+  -->
+  
+  <!-- PersonaValidacionDto -->
+  <mapping map-null="false">
+    <class-a >net.tce.dto.PersonaValidacionDto</class-a>
+    <class-b>net.tce.model.Persona</class-b>
+    <field>
+      <a>idPersona</a>
+      <b>idPersona</b>
+    </field>
+  </mapping>
+
+ 
+
+</mappings>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un objeto Dto a un POJO,
+       y viceversa. 
+       Si las propiedades de ambos objetos tienen el mismo nombre, no es necesario
+       poner el "field" correspondiente
+  -->
+  
+  <!-- Empresa -->
+  <mapping map-null="false">
+    <class-a >net.tce.dto.CurriculumEmpresaDto</class-a>
+    <class-b>net.tce.model.Empresa</class-b>
+     <field >
+      <a>idEstatusInscripcion</a>
+      <b>estatusInscripcion.idEstatusInscripcion</b>
+    </field>
+    
+    <field >
+      <a>descripcion</a>
+      <b>texto</b>
+    </field>
+    
+     <field>
+      <a>mesInicio</a>
+      <b>mes.idMes</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaInicio</a>
+      <b>fechaInicio</b>
+    </field>
+      
+  </mapping>
+  
+</mappings>

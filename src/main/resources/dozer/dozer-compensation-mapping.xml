@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un objeto Dto a un POJO,
+       y viceversa. 
+  -->
+  
+  <!-- Compensacion -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.CompensacionDto</class-a>
+    <class-b>net.tce.model.Compensacion</class-b>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>celular</a>
+      <b>celular</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>clubGym</a>
+      <b>clubGym</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>checkUp</a>
+      <b>checkUp</b>
+    </field>
+   </mapping>
+  
+  <!-- Automovil -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.AutomovilDto</class-a>
+    <class-b>net.tce.model.Automovil</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>perteneceCompania</a>
+      <b>perteneceCompania</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>gastosPagados</a>
+      <b>gastosPagados</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>opcionCompra</a>
+      <b>opcionCompra</b>
+    </field>
+   </mapping>
+   
+    <!-- Sueldo -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.SueldoDto</class-a>
+    <class-b>net.tce.model.Sueldo</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+     </field>
+      <field>
+      <a>idPeriodicidadSueldo</a>
+      <b>periodicidadSueldo.idPeriodicidadSueldo</b>
+     </field>
+     <field>
+      <a>lbPeriodicidadSueldo</a>
+      <b>periodicidadSueldo.descripcion</b>
+     </field>
+   </mapping>
+   
+   <!-- Vacaciones -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.VacacionesDto</class-a>
+    <class-b>net.tce.model.Vacaciones</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+    </field>
+   </mapping>
+  
+  <!-- Bono -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.BonoDto</class-a>
+    <class-b>net.tce.model.Bono</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+    </field>
+     <field>
+      <a>idPeriodicidadBono</a>
+      <b>periodicidadBono.idPeriodicidadBono</b>
+    </field>
+     <field>
+      <a>lbPerioricidadBono</a>
+      <b>periodicidadBono.descripcion</b>
+     </field>
+   </mapping>
+   
+    <!-- Vale -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.ValeDto</class-a>
+    <class-b>net.tce.model.Vale</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+    </field>
+     <field>
+      <a>idTipoVale</a>
+      <b>tipoVale.idTipoVale</b>
+    </field>
+     <field>
+      <a>lbTipoVale</a>
+      <b>tipoVale.descripcion</b>
+     </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>activo</a>
+      <b>activo</b>
+     </field>
+   </mapping>
+   
+   <!-- Seguro -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.SeguroDto</class-a>
+    <class-b>net.tce.model.Seguro</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+    </field>
+     <field>
+      <a>idTipoSeguro</a>
+      <b>tipoSeguro.idTipoSeguro</b>
+    </field>
+     <field>
+      <a>lbTipoSeguro</a>
+      <b>tipoSeguro.descripcion</b>
+     </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>familiar</a>
+      <b>familiar</b>
+    </field>
+   </mapping>
+   
+    <!-- Plan -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.PlanDto</class-a>
+    <class-b>net.tce.model.Plan</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>compensacion.idPersona</b>
+    </field>
+     <field>
+      <a>idTipoPlan</a>
+      <b>tipoPlan.idTipoPlan</b>
+    </field>
+   </mapping>
+   
+</mappings>

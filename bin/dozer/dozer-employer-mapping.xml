@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un objeto Dto a un POJO,
+       y viceversa. 
+  -->
+  
+  <!-- Vacancy -->
+  <mapping  map-null="false">
+    <class-a >net.tce.dto.VacancyDto</class-a>
+    <class-b>net.tce.model.Posicion</class-b>
+    <field>
+      <a>idEmpresa</a>
+      <b>empresa.idEmpresa</b>
+    </field>
+    <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+    <field>
+      <a>idEstatusPosicion</a>
+      <b>estatusPosicion.idEstatusPosicion</b>
+    </field>
+    <field>
+      <a>idAmbitoGeografico</a>
+      <b>ambitoGeografico.idAmbitoGeografico</b>
+    </field>
+    <field>
+      <a>idNivelJerarquico</a>
+      <b>nivelJerarquico.idNivelJerarquico</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>sueldoNegociable</a>
+      <b>sueldoNegociable</b>
+    </field>
+    <field-exclude> 
+	  <a>domicilios</a> 
+	  <b>domicilios</b> 
+	</field-exclude>  
+    <field>
+      <a>idTipoJornada</a>
+      <b>tipoJornada.idTipoJornada</b>
+    </field>
+    <field>
+      <a>idTipoContrato</a>
+      <b>tipoContrato.idTipoContrato</b>
+    </field>
+    <field>
+      <a>idTipoPrestacion</a>
+      <b>tipoPrestacion.idTipoPrestacion</b>
+    </field>
+    <field>
+      <a>idPeriodicidadPago</a>
+      <b>periodicidadPago.idPeriodicidadPago</b>
+    </field>
+    <field>
+      <a>idAmbitoGeografico</a>
+      <b>ambitoGeografico.idAmbitoGeografico</b>
+    </field>
+     <field>
+      <a>mesProgramacion</a>
+      <b>mesByMesProgramacion.idMes</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaCreacion</a>
+      <b>fechaCreacion</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaModificacion</a>
+      <b>fechaModificacion</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>esConfidencial</a>
+      <b>esConfidencial</b>
+    </field>
+    <field>
+      <a>nombreEmpresa</a>
+      <b>empresa.nombre</b>
+    </field>
+  </mapping>
+
+ <!--   <mapping map-null="false">
+    <class-a >net.tce.dto.VacancyPerfilPosicionDto</class-a>
+    <class-b>net.tce.model.PerfilPosicion</class-b>
+    <field>
+      <a>idPerfil</a>
+      <b>perfil.idPerfil</b>
+    </field>
+    <field>
+      <a>nombre</a>
+      <b>perfil.nombre</b>
+    </field>
+    <field>
+      <a>descripcion</a>
+      <b>perfil.descripcion</b>
+    </field>
+    <field>
+      <a>objetivo</a>
+      <b>perfil.objetivo</b>
+    </field>
+    <field>
+      <a>textos</a>
+      <b>perfil.perfilTextoNgrams</b>
+    </field>
+  </mapping> 
+
+  <mapping map-null="false">
+    <class-a >net.tce.dto.PerfilPosicionDto</class-a>
+    <class-b>net.tce.model.PerfilPosicion</class-b>
+    <field>
+      <a>idPosicion</a>
+      <b>posicion.idPosicion</b>
+    </field>
+    <field>
+      <a>idTipoPerfil</a>
+      <b>perfil.tipoPerfil.idTipoPerfil</b>
+    </field>
+  </mapping> -->
+
+  <mapping map-null="false">
+    <class-a >net.tce.dto.PerfilDto</class-a>
+    <class-b>net.tce.model.Perfil</class-b>
+    <field>
+      <a>idTipoPerfil</a>
+      <b>tipoPerfil.idTipoPerfil</b>
+    </field>
+    <field>
+      <a>idEstatusPerfil</a>
+      <b>estatusPerfil.idEstatusPerfil</b>
+    </field>
+  </mapping>
+
+  <!--  <mapping map-null="false">
+    <class-a >net.tce.dto.DomicilioDto</class-a>
+    <class-b>net.tce.model.Domicilio</class-b>
+    <field>
+      <a>idTipoDomicilio</a>
+      <b>tipoDomicilio.idTipoDomicilio</b>
+    </field>
+    <field>
+      <a>idEmpresa</a>
+      <b>empresa.idEmpresa</b>
+    </field>
+    <field>
+      <a>idTipoPrecision</a>
+      <b>tipoPrecision.idTipoPrecision</b>
+    </field>
+    <field>
+      <a>idMunicipio</a>
+      <b>municipio.idMunicipio</b>
+    </field>
+    <field>
+      <a>idCodigoProceso</a>
+      <b>codigoProceso.idCodigoProceso</b>
+    </field>
+    <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+    <field>
+      <a>idPosicion</a>
+      <b>posicion.idPosicion</b>
+    </field>
+    <field>
+      <a>idAsentamiento</a>
+      <b>asentamiento.idAsentamiento</b>
+    </field>
+    <field>
+      <a>idAsentamiento</a>
+      <b>asentamiento.idAsentamiento</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaCreacion</a>
+      <b>fechaCreacion</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaModificacion</a>
+      <b>fechaModificacion</b>
+    </field>
+  </mapping> -->
+  
+  <mapping map-null="false">
+    <class-a >net.tce.dto.PoliticaValorDto</class-a>
+    <class-b>net.tce.model.PoliticaValor</class-b>
+    <field>
+      <a>idSeccion</a>
+      <b>seccion.idSeccion</b>
+    </field>
+    <field>
+      <a>idPolitica</a>
+      <b>politica.idPolitica</b>
+    </field>
+    <field>
+      <a>idEmpresa</a>
+      <b>empresa.idEmpresa</b>
+    </field>
+    <field>
+      <a>idPerfil</a>
+      <b>perfil.idPerfil</b>
+    </field>
+    <field>
+      <a>idConcepto</a>
+      <b>concepto.idConcepto</b>
+    </field>
+    <field>
+      <a>idPosicion</a>
+      <b>posicion.idPosicion</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaCreacion</a>
+      <b>fechaCreacion</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.DateDozerConverter">
+      <a>fechaModificacion</a>
+      <b>fechaModificacion</b>
+    </field>
+  </mapping>
+  
+   <mapping map-null="false">
+    <class-a >net.tce.dto.VacancyPerfilTextoNgramDto</class-a>
+    <class-b>net.tce.model.PerfilTextoNgram</class-b>
+  </mapping>
+
+  <mapping map-null="false">
+    <class-a >net.tce.dto.PerfilTextoNgramDto</class-a>
+    <class-b>net.tce.model.PerfilTextoNgram</class-b>
+    <field>
+      <a>idPerfil</a>
+      <b>perfil.idPerfil</b>
+    </field>
+  </mapping>
+
+</mappings>

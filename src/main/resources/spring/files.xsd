@@ -1,0 +1,54 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xmime="http://www.w3.org/2005/05/xmlmime" 
+	xmlns:tns="http://jaxws.adapter.admin.tce.net/"
+	targetNamespace="http://jaxws.adapter.admin.tce.net/"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:appinfo>
+			<jaxb:schemaBindings>
+				<jaxb:package name="net.tce.admin.adapter.jaxws" />
+			</jaxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="storeDocumentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fileDto" type="tns:fileDto" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="storeDocumentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mensajeDtoArray" type="tns:mensajeDtoArray" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="fileDto">
+		<xs:sequence>
+			<xs:element name="idEmpresaConf" type="xs:string" minOccurs="0" />
+			<xs:element name="descripcion" type="xs:string" minOccurs="0" />
+			<xs:element name="dhContenido" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream" minOccurs="0" />
+			<xs:element name="idContenido" type="xs:string" minOccurs="0" />
+			<xs:element name="idEmpresa" type="xs:string" minOccurs="0" />
+			<xs:element name="idPersona" type="xs:string" minOccurs="0" />
+			<xs:element name="idTipoContenido" type="xs:string" minOccurs="0" />
+			<xs:element name="tipoArchivo" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="mensajeDto">		
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0" />
+			<xs:element name="value" type="xs:string" minOccurs="0" />
+			<xs:element name="code" type="xs:string" minOccurs="0" />
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+			<xs:element name="type" type="xs:string" minOccurs="0" />
+		</xs:sequence>			
+	</xs:complexType>
+	<xs:complexType name="mensajeDtoArray" final="#all">
+		<xs:sequence>
+			<xs:element name="item" type="tns:mensajeDto" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

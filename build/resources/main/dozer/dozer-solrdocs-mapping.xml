@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un objeto Dto a un POJO,
+       y viceversa. 
+       Si las propiedades de ambos objetos tienen el mismo nombre, no es necesario
+       poner el "field" correspondiente
+  -->
+  
+  <!-- Empresa -->
+  <mapping map-null="false">
+    <class-a >net.tce.dto.DocumentoClasificacionDto</class-a>
+    <class-b>net.tce.model.DocumentoClasificacion</class-b>
+     <field >
+      <a>idArea</a>
+      <b>area.idArea</b>
+     </field>    
+     <field >
+      <a>idEmpresa</a>
+      <b>empresa.idEmpresa</b>
+     </field>
+     <field >
+      <a>idPerfil</a>
+      <b>perfil.idPerfil</b>
+     </field>
+      <field >
+      <a>idPosicion</a>
+      <b>posicion.idPosicion</b>
+     </field>
+      <field >
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+     </field>
+  </mapping>
+  
+  
+  
+</mappings>

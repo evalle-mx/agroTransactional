@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un InvasorDto a un Invasor,
+       y viceversa. 
+  -->
+  
+  <!-- Cat.Pais -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.Pais</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idPais</b>
+    </field>
+     <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+    <field>
+      <a>field1</a>
+      <b>nombre</b>
+    </field>
+  </mapping>
+  
+  <!-- Cat.Estado -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.Estado</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idEstado</b>
+    </field>
+     <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+    <field>
+      <a>idForeign1</a>
+      <b>pais.idPais</b>
+    </field> 
+      <field>
+      <a>field1</a>
+      <b>nombre</b>
+    </field>
+    <field>
+      <a>field2</a>
+      <b>claveEstado</b>
+    </field>
+  </mapping>
+  
+   <!-- Cat.Municipio -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.Municipio</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idMunicipio</b>
+    </field>
+     <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+    <field>
+      <a>idForeign1</a>
+      <b>estado.idEstado</b>
+    </field> 
+      <field>
+      <a>field1</a>
+      <b>nombre</b>
+    </field>
+    <field>
+      <a>field2</a>
+      <b>claveMunicipio</b>
+    </field>
+  </mapping>
+
+   <!-- Cat.Ciudad -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.Ciudad</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idCiudad</b>
+    </field>
+     <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+    <field>
+      <a>idForeign1</a>
+      <b>municipio.idMunicipio</b>
+    </field> 
+      <field>
+      <a>field1</a>
+      <b>nombre</b>
+    </field>
+    <field>
+      <a>field2</a>
+      <b>claveCiudad</b>
+    </field>
+  </mapping>
+  
+   <!-- Cat.Asentamiento -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.Asentamiento</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idAsentamiento</b>
+    </field>
+     <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+    <field>
+      <a>idForeign1</a>
+      <b>municipio.idMunicipio</b>
+    </field> 
+    <field>
+      <a>idForeign2</a>
+      <b>ciudad.idCiudad</b>
+    </field>
+     <field>
+      <a>idForeign3</a>
+      <b>tipoAsentamiento.idTipoAsentamiento</b>
+    </field>
+      <field>
+      <a>field1</a>
+      <b>claveAsentamiento</b>
+    </field>
+    <field>
+      <a>field2</a>
+      <b>descripcion</b>
+    </field>
+     <field>
+      <a>field3</a>
+      <b>codigoPostal</b>
+    </field>
+  </mapping>
+  
+  <!-- Cat.Estado civil -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.EstadoCivil</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idEstadoCivil</b>
+    </field>
+    <field>
+      <a>field1</a>
+      <b>descripcion</b>
+    </field>
+    <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+  </mapping>
+  
+  <!-- Cat.Estatus Padres -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.TipoEstatusPadres</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idTipoEstatusPadres</b>
+    </field>
+    <field>
+      <a>field1</a>
+      <b>descripcion</b>
+    </field>
+    <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+  </mapping>
+  
+  <!-- Cat.Tipo Convivencia -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.TipoConvivencia</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idTipoConvivencia</b>
+    </field>
+    <field>
+      <a>field1</a>
+      <b>descripcion</b>
+    </field>
+    <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+  </mapping>
+  
+   <!-- Cat.Tipo Vivienda -->
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.TipoVivienda</class-b>
+    <field>
+      <a>idPrimary</a>
+      <b>idTipoVivienda</b>
+    </field>
+    <field>
+      <a>field1</a>
+      <b>descripcion</b>
+    </field>
+    <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+  </mapping>
+  
+  <!-- EmpresaParametro -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.EmpresaParametroDto</class-a>
+    <class-b>net.tce.model.EmpresaParametro</class-b>
+     <field>
+      <a>idTipoParametro</a>
+      <b>tipoParametro.idTipoParametro</b>
+    </field>     
+  </mapping>
+  
+  <!-- Area -->  
+  <mapping>
+    <class-a>net.tce.dto.CatalogueDto</class-a>
+    <class-b>net.tce.model.Area</class-b>
+    <field>
+      <a>idForeign1</a>
+      <b>area.idArea</b>
+    </field>
+    <field>
+      <a>idPrimary</a>
+      <b>idArea</b>
+    </field>
+     <field>
+      <a>status</a>
+      <b>estatusRegistro</b>
+    </field>
+  </mapping>
+  
+</mappings>

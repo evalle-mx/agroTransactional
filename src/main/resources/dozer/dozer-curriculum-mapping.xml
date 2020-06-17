@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns='http://dozer.sourceforge.net'
+   xsi:schemaLocation='http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd'>
+
+  <!-- Los mapeos son bidireccionales (a menos que se indique lo contrario).
+       Es decir, este mapeo sirve para pasar de un objeto Dto a un POJO,
+       y viceversa. 
+       Si las propiedades de ambos objetos tienen el mismo nombre, no es necesario
+       poner el "field" correspondiente
+  -->
+  
+  <!-- Persona -->
+  <mapping map-null="false">
+    <class-a >net.tce.dto.CurriculumDto</class-a>
+    <class-b>net.tce.model.Persona</class-b>
+     <field >
+      <a>idTipoGenero</a>
+      <b>tipoGenero.idTipoGenero</b>
+    </field>
+     <field>
+      <a>idTipoContrato</a>
+      <b>tipoContrato.idTipoContrato</b>
+    </field>
+     <field>
+      <a>idTipoPrestacion</a>
+      <b>tipoPrestacion.idTipoPrestacion</b>
+    </field>
+     <field>
+      <a>idEstatusInscripcion</a>
+      <b>estatusInscripcion.idEstatusInscripcion</b>
+    </field>
+    <field>
+      <a>idEstadoCivil</a>
+      <b>estadoCivil.idEstadoCivil</b>
+    </field>
+     <field>
+      <a>idEstatusInscripcion</a>
+      <b>estatusInscripcion.idEstatusInscripcion</b>
+    </field>
+    <field>
+      <a>idPeriodoEstadoCivil</a>
+      <b>periodoEstadoCivil.idPeriodoEstadoCivil</b>
+    </field>
+    <field>
+      <a>mesNacimiento</a>
+      <b>mes.idMes</b>
+    </field>
+      <!-- familyTenement -->
+   <field>
+      <a>idTipoEstatusPadres</a>
+      <b>tipoEstatusPadres.idTipoEstatusPadres</b>
+    </field>
+    <field>
+      <a>idTipoConvivencia</a>
+      <b>tipoConvivencia.idTipoConvivencia</b>
+    </field>
+     <field>
+      <a>idTipoVivienda</a>
+      <b>tipoVivienda.idTipoVivienda</b>
+    </field>
+    <!-- additionalInfo -->
+     <field >
+      <a>idTipoDispViajar</a>
+      <b>tipoDispViajar.idTipoDispViajar</b>
+    </field>
+    <field>
+      <a>idAmbitoGeografico</a>
+      <b>ambitoGeografico.idAmbitoGeografico</b>
+    </field>
+     <field>
+      <a>idTipoJornada</a>
+      <b>tipoJornada.idTipoJornada</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>permisoTrabajo</a>
+      <b>permisoTrabajo</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>cambioDomicilio</a>
+      <b>cambioDomicilio</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>disponibilidadHorario</a>
+      <b>disponibilidadHorario</b>
+    </field>
+     <field-exclude>
+      <a>diasExperienciaLaboral</a>
+      <b>diasExperienciaLaboral</b>
+    </field-exclude>
+	<field-exclude>
+      <a>fechaCreacion</a>
+      <b>fechaCreacion</b>
+    </field-exclude>
+    <field-exclude>
+      <a>fechaModificacion</a>
+      <b>fechaModificacion</b>
+    </field-exclude>
+  </mapping>
+  
+   <!-- Domicilio -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.LocationInfoDto</class-a>
+    <class-b>net.tce.model.Domicilio</class-b>
+    <field>
+      <a>idTipoDomicilio</a>
+      <b>tipoDomicilio.idTipoDomicilio</b>
+    </field>
+     <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+    <field>
+      <a>idEmpresa</a>
+      <b>empresa.idEmpresa</b>
+    </field>
+     <field>
+      <a>idPosicion</a>
+      <b>posicion.idPosicion</b>
+    </field>
+     <field>
+      <a>idAsentamiento</a>
+      <b>asentamiento.idAsentamiento</b>
+    </field>
+    <field>
+      <a>idCodigoProceso</a>
+      <b>codigoProceso.idCodigoProceso</b>
+    </field>
+     <field>
+      <a>idTipoPrecision</a>
+      <b>tipoPrecision.idTipoPrecision</b>
+    </field>
+    <field>
+      <a>idMunicipio</a>
+      <b>municipio.idMunicipio</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>direccionFacturacion</a>
+      <b>direccionFacturacion</b>
+    </field>
+  </mapping>
+  
+  <!-- Contacto -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.ContactInfoDto</class-a>
+    <class-b>net.tce.model.Contacto</class-b>
+     <field>
+      <a>idTipoContacto</a>
+      <b>tipoContacto.idTipoContacto</b>
+    </field>
+     <field>
+      <a>lbTipoContacto</a>
+      <b>tipoContacto.descripcion</b>
+    </field>
+    <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+     <field>
+      <a>idEmpresa</a>
+      <b>empresa.idEmpresa</b>
+    </field>
+  </mapping>
+  
+  <!-- ContactoTelefono -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.ContactInfoDto</class-a>
+    <class-b>net.tce.model.ContactoTelefono</class-b>
+    <field>
+      <a>idContacto</a>
+      <b>contacto.idContacto</b>
+    </field>
+   </mapping>
+  
+   <!-- PersonaPais -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.NationalityDto</class-a>
+    <class-b>net.tce.model.PersonaPais</class-b>
+     <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+    <field>
+      <a>idPais</a>
+      <b>pais.idPais</b>
+    </field>
+  </mapping>  
+  
+   <!-- PersonaHabilidad -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.PersonSkillDto</class-a>
+    <class-b>net.tce.model.Habilidad</class-b>
+     <field>
+      <a>idHabilidad</a>
+      <b>idHabilidad</b>
+    </field>
+    <field>
+      <a>idDominio</a>
+      <b>dominio.idDominio</b>
+    </field>
+     <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+   </mapping>
+  
+   <!-- ExperienciaLaboral -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.WorkExperienceDto</class-a>
+    <class-b>net.tce.model.ExperienciaLaboral</class-b>
+      <field>
+      <a>idPais</a>
+      <b>pais.idPais</b>
+    </field>
+     <field>
+      <a>idNivelJerarquico</a>
+      <b>nivelJerarquico.idNivelJerarquico</b>
+    </field>
+     <field>
+      <a>idTipoContrato</a>
+      <b>tipoContrato.idTipoContrato</b>
+    </field>
+     <field>
+      <a>idTipoPrestacion</a>
+      <b>tipoPrestacion.idTipoPrestacion</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>genteACargo</a>
+      <b>genteACargo</b>
+    </field>
+    <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>trabajoActual</a>
+      <b>trabajoActual</b>
+    </field>
+     <field custom-converter="net.tce.util.converter.BooleanDozerConverter">
+      <a>referencias</a>
+      <b>referencias</b>
+    </field>
+     <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+    <field>
+      <a>idTipoJornada</a>
+      <b>tipoJornada.idTipoJornada</b>
+    </field>
+    <field>
+      <a>mesInicio</a>
+      <b>mesByMesInicio.idMes</b>
+    </field>
+    <field>
+      <a>mesFin</a>
+      <b>mesByMesFin.idMes</b>
+    </field>
+   </mapping>
+  
+  
+  
+    <!-- Referencia -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.ReferenceDto</class-a>
+    <class-b>net.tce.model.Referencia</class-b>
+    <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+  </mapping>
+  
+  
+  <!--   Escolaridad -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.AcademicBackgroundDto</class-a>
+    <class-b>net.tce.model.Escolaridad</class-b>
+   <field>
+      <a>idGradoAcademico</a>
+      <b>gradoAcademico.idGradoAcademico</b>
+    </field>
+     <field>
+      <a>idEstatusEscolar</a>
+      <b>estatusEscolar.idEstatusEscolar</b>
+    </field>      
+   <field>
+      <a>idPais</a>
+      <b>pais.idPais</b>
+    </field>
+    <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+    <field>
+      <a>mesInicio</a>
+      <b>mesByMesInicio.idMes</b>
+    </field>
+    <field>
+      <a>mesFin</a>
+      <b>mesByMesFin.idMes</b>
+    </field>
+ </mapping>
+  
+
+  <!-- Settlement-Asentamiento -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.SettlementDto</class-a>
+    <class-b>net.tce.model.Asentamiento</class-b>
+    <field>
+      <a>idNeighborhood</a>
+      <b>idAsentamiento</b>
+    </field>
+  </mapping>
+  
+  <!-- Persona-Certificacion -->
+  <mapping map-null="false">
+    <class-a>net.tce.dto.CertificacionDto</class-a>
+    <class-b>net.tce.model.Certificacion</class-b>
+     <field>
+      <a>idCertificacion</a>
+      <b>idCertificacion</b>
+    </field>
+    <field>
+      <a>idPersona</a>
+      <b>persona.idPersona</b>
+    </field>
+     <field>
+      <a>idGrado</a>
+      <b>gradoAcademico.idGradoAcademico</b>
+    </field>
+    <field>
+      <a>lbGrado</a>
+      <b>gradoAcademico.descripcion</b>
+    </field>
+    <field>
+      <a>tituloCert</a>
+      <b>titulo</b>
+    </field>
+    <field>
+      <a>institucion</a>
+      <b>institucion</b>
+    </field>
+    <field>
+      <a>anio</a>
+      <b>anio</b>
+    </field>
+   </mapping>
+  
+  
+</mappings>
